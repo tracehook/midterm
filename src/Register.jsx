@@ -11,25 +11,26 @@ function Register() {
     const [lastname, setLastname] = useState('');
     const navigate = useNavigate();
 
-    // Add a function to send the form data to an email (DOESNT WORK)
+    // Add a function to send the form data to an email (MIGHT WORK)
     const sendToEmail = (e) => {
         e.preventDefault();
 
         const templateParams = { // Template for data to send to email
-            to_name: 'jowen22@murraystate.edu',  
+            to_name: 'Coder!',  
             from_name: `Murray State CSC`,
             message: `Username: ${username}\nEmail: ${email}\nFirst Name: ${firstname}\nLast Name: ${lastname}`,
         };
 
-        emailjs.send('service_ltte29k', 'YOUR_TEMPLATE_ID', templateParams, 'YOUR_USER_ID')
-            .then((response) => {
-                console.log('SUCCESS!', response.status, response.text);
-                alert('Registration successful! Check your email for confirmation.');
-                navigate('/');  // Redirect to login page
-            }, (err) => {
-                console.error('FAILED...', err);
-                alert('Failed to send email. Please try again later.');
-            });
+        emailjs.send('service_ltte29k', 'template_l3masrc', templateParams, 'wtHN6dIyzkrQRGVsO')
+    .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        alert('Registration successful! Check your email for confirmation.');
+        navigate('/');  // Redirect after success
+    }, (err) => {
+        console.error('FAILED...', err);
+        alert('Failed to send email. Please try again later.');
+    });
+
     };
 
     

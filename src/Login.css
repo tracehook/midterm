@@ -66,5 +66,11 @@ input {
 }
 
 header {
-  font-size: larger;
+  font-size: 2.5rem; /* Larger text size */
+  padding: 20px; /* Space inside the bubble */
+  border-radius: 50px; /* Rounded corners for bubble effect */
+  text-align: center; /* Center the text */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for a floating effect */
+  color: white; /* Text color */
+  font-weight: bold; /* Make text bold */
 }
